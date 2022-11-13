@@ -6,7 +6,7 @@ import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.co
 import { HomeComponent } from './modules/home/home.component';
 import { LoginComponent } from './modules/login/login.component';
 import { ProductComponent } from './modules/product/product.component';
-import { AdminComponent } from './moduls/admin/admin.component';
+import { AdminComponent } from './modules/admin/admin.component';
 
 const routes: Routes = [
   {
