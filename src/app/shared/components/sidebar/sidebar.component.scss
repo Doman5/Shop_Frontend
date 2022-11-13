@@ -1,4 +1,6 @@
+@import'../../../../variable.scss';
+
 :host {
-    background-color: rgb(42, 222, 25);
+    background-color: $lightgrey;
     padding: 20px;
 }

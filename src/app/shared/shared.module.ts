@@ -5,6 +5,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { FlexModule } from '@angular/flex-layout';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { MaterialModule } from './material.module';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -17,12 +21,15 @@ import { FlexModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     RouterModule,
-    FlexModule
+    FlexModule,
+    MaterialModule,
+    MatListModule
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    MatListModule
   ]
 })
 export class SharedModule { }

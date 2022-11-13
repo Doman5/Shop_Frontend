@@ -1,4 +1,16 @@
+@import'../../../../variable.scss';
+
 :host {
-    background-color: rgb(231, 115, 115);
+    background-color: $darkgrey;
     padding: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    color: white;
+}
+
+.logo-icon,
+.shop-busket {
+    font-size: 30px;
 }
