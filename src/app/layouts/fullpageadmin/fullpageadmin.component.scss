@@ -8,12 +8,23 @@
     padding: 20px;
 }
 
-header {
-    background-color: #ddd;
+header,
+.sidebar {
+    background-color: #292b31;
     padding: 20px;
 }
 
-.sidebar {
-    background-color: red;
-    padding: 20px;
+.logo {
+    font-size: 22px;
+    color: white;
+}
+
+.logo-icon {
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
 }

@@ -1,17 +1,17 @@
 <header fxLayoutAlign="start center">
     <div fxFlex>
-        logo
-    </div>
-    <div>
-        <button routerLink=""> link</button>
-        <button routerLink=""> link</button>
-        <button routerLink=""> link</button>
+        <mat-icon color="warn" class="logo-icon">store</mat-icon>
+        <span class="logo">Shop</span>
     </div>
 </header>
 <div flexLayout="row" fxFlex>
     <div fxFlex="15">
         <div fxFlex class="sidebar">
-            sidebar
+            <mat-selection-list [multiple]="false">
+                <mat-list-option><a routerLink="/admin"> Dashboard </a></mat-list-option>
+                <mat-list-option><a routerLink="/admin/products"> Produkty </a></mat-list-option>
+                <mat-list-option><a routerLink="/admin"> Link </a></mat-list-option>
+            </mat-selection-list>
         </div>
     </div>
     <div fxFlex="85" class="content">
