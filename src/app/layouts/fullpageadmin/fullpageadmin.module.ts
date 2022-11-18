@@ -8,13 +8,17 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AdminProductComponent } from 'src/app/modules/admin/admin-product/admin-product.component';
 import { AdminProductUpdateComponent } from 'src/app/modules/admin/admin-product-update/admin-product-update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminProductFromComponent } from 'src/app/modules/admin/admin-product-form/admin-product-form.component';
+import { AdminProductAddComponent } from 'src/app/modules/admin/admin-product-add/admin-product-add.component';
 
 @NgModule({
   declarations: [
     FullpageadminComponent,
     AdminComponent,
     AdminProductComponent,
-    AdminProductUpdateComponent
+    AdminProductUpdateComponent,
+    AdminProductFromComponent,
+    AdminProductAddComponent
   ],
   imports: [
     CommonModule,

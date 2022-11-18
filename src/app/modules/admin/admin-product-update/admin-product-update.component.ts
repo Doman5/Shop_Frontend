@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { AdminProductUpdateService } from '../admin-product-update.service';
+import { AdminProductUpdateService } from './admin-product-update.service';
 import { AdminProductUpdate } from './model/adminProductUpdate';
 
 @Component({
