@@ -6,6 +6,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { FlexModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -17,13 +21,17 @@ import { MaterialModule } from './material.module';
     CommonModule,
     RouterModule,
     FlexModule,
-    MaterialModule
+    MaterialModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
-    MaterialModule
+    MaterialModule,
+    MatInputModule,
+    MatSnackBarModule
   ]
 })
 export class SharedModule { }

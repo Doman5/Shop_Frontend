@@ -6,18 +6,23 @@ import { FullpageadminComponent } from './fullpageadmin.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AdminProductComponent } from 'src/app/modules/admin/admin-product/admin-product.component';
+import { AdminProductUpdateComponent } from 'src/app/modules/admin/admin-product-update/admin-product-update.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     FullpageadminComponent,
     AdminComponent,
-    AdminProductComponent
+    AdminProductComponent,
+    AdminProductUpdateComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class FullpageadminModule { }
