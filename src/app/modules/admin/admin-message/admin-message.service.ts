@@ -5,6 +5,9 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminMessageService {
+  uploadImage(FormData: { new(form?: HTMLFormElement | undefined): FormData; prototype: FormData; }) {
+    throw new Error('Method not implemented.');
+  }
 
   messages: Array<string> = [];
   subject = new Subject<Array<string>>();
