@@ -13,6 +13,9 @@ import { AdminProductAddService } from './admin-product-add.service';
 export class AdminProductAddComponent implements OnInit {
 
   productForm!: FormGroup;
+  imageForm!: FormGroup;
+  image: string | null = null;
+  reqiuredFileTypes = "image/jpeg, image/png"
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,10 +29,14 @@ export class AdminProductAddComponent implements OnInit {
     this.productForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
+      fullDescription: ['', [Validators.required, Validators.minLength(4)]],
       category: ['', [Validators.required, Validators.minLength(4)]],
       price: ['', [Validators.required, Validators.min(0)]],
       currency: ['PLN', Validators.required],
       slug: ['',[Validators.required,Validators.minLength(4)]]
+    });
+    this.imageForm = this.formBuilder.group({
+      file: ['']
     })
   }
 
@@ -44,4 +51,18 @@ export class AdminProductAddComponent implements OnInit {
   })
   }
 
+  uploadFile() {
+    let formData = new FormData();
+    formData.append('file', this.imageForm.get("file")?.value);
+    this.adminProductAddService.uploadImage(formData)
+        .subscribe(result => this.image = result.filename);
+  }
+
+  onFileChange(event: any) {
+    if(event.target.files.length > 0) {
+      this.imageForm.patchValue({
+        file: event.target.files[0]
+      });
+    }
+  } 
 }

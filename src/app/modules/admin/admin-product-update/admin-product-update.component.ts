@@ -34,6 +34,7 @@ export class AdminProductUpdateComponent implements OnInit {
     this.productForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
+      fullDescription: ['', [Validators.required, Validators.minLength(4)]],
       category: ['', [Validators.required, Validators.minLength(4)]],
       price: ['', [Validators.required, Validators.min(0)]],
       currency: ['PLN', Validators.required],
@@ -56,6 +57,7 @@ export class AdminProductUpdateComponent implements OnInit {
     this.adminProductUpdateService.saveProduct(id, {
         name: this.productForm.get('name')?.value,
         description: this.productForm.get('description')?.value,
+        fullDescription: this.productForm.get('fullDescription')?.value,
         category: this.productForm.get('category')?.value,
         price: this.productForm.get('price')?.value,
         currency: this.productForm.get('currency')?.value,
@@ -87,9 +89,10 @@ export class AdminProductUpdateComponent implements OnInit {
   }
 
   private mapFormValues(product: AdminProductUpdate): void {
-    return this.productForm.setValue({
+    this.productForm.setValue({
       name: product.name,
       description: product.description,
+      fullDescription: product.fullDescription,
       category: product.category,
       price: product.price,
       currency: product.currency,
