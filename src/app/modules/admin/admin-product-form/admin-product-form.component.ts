@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
+import { AdminCategoryNameDto } from "./adminCategoryNameDto";
+import { FormCategoryService } from "./form-category.service";
 
 @Component({
     selector: `app-admin-product-form`,
@@ -59,13 +61,14 @@ import { FormGroup } from "@angular/forms";
 
         <mat-form-field appearance="fill">
             <mat-label>Kategoria</mat-label>
-            <input matInput placeholder="Podaj kategorie produktu" formControlName="category">
-            <div *ngIf="category?.invalid && (category?.dirty || category?.touched)">
-                <div *ngIf="category?.errors?.['required']" class="errorMessage">
+            <mat-select formControlName="categoryId">
+                <mat-option *ngFor="let el of categories" [value]="el.id">
+                    {{el.name}}
+                </mat-option>
+            </mat-select>
+            <div *ngIf="categoryId?.invalid && (categoryId?.dirty || categoryId?.touched)">
+                <div *ngIf="categoryId?.errors?.['required']" class="errorMessage">
                     Kategoria jest wymagana
-                </div>
-                <div *ngIf="name?.errors?.['minlength']" class="errorMessage">
-                    Kategoria musi mieć conajmniej 4 znaki
                 </div>
             </div>
         </mat-form-field>
@@ -105,11 +108,20 @@ import { FormGroup } from "@angular/forms";
 })
 export class AdminProductFromComponent implements OnInit {
 
+    constructor(
+        private formCategoryService: FormCategoryService
+    ){}
     
     @Input() parentForm!: FormGroup;
+    categories: Array<AdminCategoryNameDto>= [];
     
     ngOnInit(): void {
-    
+        this.getCategories();
+    }
+
+    getCategories() {
+        this.formCategoryService.getCategories()
+            .subscribe(categories => this.categories = categories);
     }
 
     get name() {
@@ -124,8 +136,8 @@ export class AdminProductFromComponent implements OnInit {
         return this.parentForm.get("fullDescription")
     }
 
-    get category() {
-        return this.parentForm.get("category")
+    get categoryId() {
+        return this.parentForm.get("categoryId")
     }
 
     get price() {
