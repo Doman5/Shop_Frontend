@@ -14,13 +14,15 @@ import { ProductDetailsComponent } from './modules/product/product-details/produ
 import { AdminCategoryComponent } from './modules/admin/admin-category/admin-category.component';
 import { AdminCategoryAddComponent } from './modules/admin/admin-category/admin-category-add/admin-category-add.component';
 import { AdminCategoryUpdateComponent } from './modules/admin/admin-category/admin-category-update/admin-category-update.component';
+import { CategoryComponent } from './modules/category/category.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
       {path: '', component: HomeComponent},
       {path: "products", component: ProductComponent},
-      {path: "products/:slug", component: ProductDetailsComponent}
+      {path: "products/:slug", component: ProductDetailsComponent},
+      {path: "categories/:slug", component: CategoryComponent}
     ]
   },
   {
