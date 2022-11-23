@@ -10,11 +10,11 @@ import { AdminComponent } from './modules/admin/admin.component';
 import { AdminProductComponent } from './modules/admin/admin-product/admin-product.component';
 import { AdminProductUpdateComponent } from './modules/admin/admin-product-update/admin-product-update.component';
 import { AdminProductAddComponent } from './modules/admin/admin-product-add/admin-product-add.component';
-import { ProductDetailsComponent } from './modules/product/product-details/product-details.component';
 import { AdminCategoryComponent } from './modules/admin/admin-category/admin-category.component';
 import { AdminCategoryAddComponent } from './modules/admin/admin-category/admin-category-add/admin-category-add.component';
 import { AdminCategoryUpdateComponent } from './modules/admin/admin-category/admin-category-update/admin-category-update.component';
 import { CategoryComponent } from './modules/category/category.component';
+import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 
 const routes: Routes = [
   {
