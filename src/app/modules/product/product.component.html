@@ -18,7 +18,7 @@
     </div>
     <mat-card-actions align="end" fxLayoutGap="10">
       <button mat-button color="accent" routerLink="{{'/products/' + product.slug}}">pokaż</button>
-      <button mat-button color="primary">do koszyka</button>
+      <button mat-button color="primary"  routerLink="/cart" [queryParams]="{productId: product.id}" >do koszyka</button>
     </mat-card-actions>
 </mat-card>
 
