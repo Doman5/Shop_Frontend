@@ -82,8 +82,7 @@ export class CartComponent implements OnInit {
   }
 
   back() {
-    // this.location.historyGo(this.isProductAdded ? -2 : -1);
-    this.location.historyGo(-2);
+    this.location.historyGo(this.isProductAdded ? -2 : -1);
   }
 
   deleteItem(id: number) {
