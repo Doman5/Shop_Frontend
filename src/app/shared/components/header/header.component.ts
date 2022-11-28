@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { CartIconService } from 'src/app/modules/common/service/cart-icon.service';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  title = "Shop"
+  title = "Shop";
+  cartProductCounter = "";
 
-  constructor() { }
+  constructor(
+    private headerService: HeaderService,
+    private cookieService: CookieService,
+    private cartIconService: CartIconService
+    ) { }
 
   ngOnInit(): void {
+    this.countCartProduct();
+    this.cartIconService.subject
+      .subscribe(counter => this.cartProductCounter = String(counter > 0 ? counter: ""))
+  }
+
+  countCartProduct() {
+    this.headerService.getCountProduct(Number(this.cookieService.get("cartId")))
+    .subscribe(counter => this.cartProductCounter = String(counter > 0 ? counter: ""));
   }
 
 }
