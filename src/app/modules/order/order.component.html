@@ -94,9 +94,9 @@
                     <div *ngFor="let item of cartSummary.items; let i = index"  class="card-row">
                         <div fxLayout="row" fxLayoutAlign="space-between start">
                             <div class="cart-col-1">
-                                <a routerLink="{{'/products/' + item.product?.slug}}">
+                                <a routerLink="{{'/products/' + item.product.slug}}">
                                     <img *ngIf="!item.product?.image" src="/assets/image-placeholder.png" width="100">
-                                    <img *ngIf="item.product?.image" src="{{'/api/data/productImage/' + item.product?.image}}" width="100">
+                                    <img *ngIf="item.product?.image" src="{{'/api/data/productImage/' + item.product.image}}" width="100">
                                 </a>
                             </div>
                             <div class="cart-col-2">{{item.product.name}}</div>
@@ -107,6 +107,22 @@
                     <div fxLayoutAlign="end start">
                         <div class="summary"> Wartość: </div>
                         <div class="summary"> <b>{{cartSummary.summary.grossValue}}</b></div>
+                    </div>
+                    <div>
+                        <h2> Dostawa </h2>
+                        <mat-radio-group fxLayout="column" formControlName="shipment">
+                            <mat-radio-button class="shipmentRadioButton" *ngFor="let shipment of initData?.shipments" 
+                            [value]="shipment" [checked]="shipment.defaultShipment" >
+                                <span class="shipment-1">{{shipment.name}} </span>
+                                <span class="shipment-2">{{shipment.price}} PLN</span>
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div fxLayoutAlign="end">
+                    <div class="orderTotal">
+                        Całkowita kwota do zapłaty:
+                        <span class="orderTotalValue"> {{cartSummary.summary.grossValue + shipment?.value.price}} PLN</span>
                     </div>
                 </div>
                 <div fxLayoutAlign="end start">
