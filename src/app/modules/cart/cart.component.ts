@@ -4,9 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CartIconService } from '../common/service/cart-icon.service';
 import { CartService } from './cart.service';
-import { CartSummary } from './model/cartSummary';
-import { CartSummaryItem } from './model/cartSummaryItem';
+import { CartSummary } from '../common/model/cartSummary';
 import { Location } from '@angular/common';
+import { CartSummaryItem } from '../common/model/cartSummaryItem';
 
 
 @Component({

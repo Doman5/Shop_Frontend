@@ -1,8 +1,8 @@
-import { Product } from "../../common/model/product";
+import { CartProduct } from "../../common/model/cartProduct";
 
 export interface Category {
     name: string,
     description: string,
     slug: string,
-    products: Array<Product>
+    products: Array<CartProduct>
 }

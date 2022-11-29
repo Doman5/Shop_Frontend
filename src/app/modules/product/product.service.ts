@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Page } from 'src/app/modules/common/model/page';
 import { Product } from '../common/model/product';
 
+
 @Injectable({
   providedIn: 'root'
 })
