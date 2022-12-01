@@ -6,6 +6,7 @@ import { InitData } from './model/initData';
 import { OrderDto } from './model/orderDto';
 import { OrderSummary } from './model/orderSummary';
 import { OrderService } from './order.service';
+import { CartIconService } from '../common/service/cart-icon.service';
 
 @Component({
   selector: 'app-order',
@@ -18,6 +19,7 @@ export class OrderComponent implements OnInit {
   cartSummary!: CartSummary;
   orderSummary!: OrderSummary;
   initData!: InitData;
+  errorMessage!: boolean;
 
   private statuses = new Map<string, string>([
     ["NEW", "Nowe"],
@@ -26,7 +28,8 @@ export class OrderComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private orderService: OrderService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private cartIconService: CartIconService
   ) { }
 
   ngOnInit(): void {
@@ -59,9 +62,14 @@ export class OrderComponent implements OnInit {
         shipmentId: Number(this.formGroup.get("shipment")?.value.id),
         paymentId: Number(this.formGroup.get("payment")?.value.id)
       } as OrderDto)
-      .subscribe(orderSummary => {
+      .subscribe({
+        next: orderSummary => {
+          this.cartIconService.cartChanged(0);
         this.orderSummary = orderSummary;
         this.cookieService.delete("cartId");
+        this.errorMessage = false
+      },
+      error: err => this.errorMessage = true
       })
     }
   }
