@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { DefaultModule } from './layouts/default/default.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
