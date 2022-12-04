@@ -84,12 +84,12 @@ export class AdminOrderStatsComponent implements AfterViewInit {
   getSalesStatistic() {
     this.adminOrderService.getSalesStatistic()
       .subscribe(stats => {
-        this.data.labels = stats.label;
+        this.data.labels = stats.labels;
         this.data.datasets[0].data = stats.order;
-        this.data.datasets[1].data = stats.sale;
+        this.data.datasets[1].data = stats.sales;
         this.chart.update();
-        this.orderCount = stats.order.reduce((acc: number, value: number) => acc + value);
-        this.salesSum = stats.sale.reduce((acc: number, value: number) => acc + value);
+        this.orderCount = stats.ordersCount;
+        this.salesSum = stats.salesSum;
       });
   }
 
