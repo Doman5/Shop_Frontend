@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { FullpageModule } from './layouts/fullpage/fullpage.module';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { DefaultModule } from './layouts/default/default.module';
+import { FullpageadminemptyModule } from './layouts/fullpageadminempty/fullpageadminempty.module';
+import { jwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
+import { AdminAuthorizationGuard } from './modules/admin/common/quard/adminAuthorizationGuard';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,15 @@ import { DefaultModule } from './layouts/default/default.module';
     DefaultModule,
     FullpageModule,    
     FullpageadminModule,
+    FullpageadminemptyModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    {provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true },
+    AdminAuthorizationGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
