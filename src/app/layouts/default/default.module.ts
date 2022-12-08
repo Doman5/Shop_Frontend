@@ -13,6 +13,7 @@ import { CartComponent } from 'src/app/modules/cart/cart.component';
 import { OrderComponent } from 'src/app/modules/order/order.component';
 import { ReplacePipe } from 'src/app/modules/common/pipe/preplacePipe';
 import { MaterialModule } from 'src/app/shared/material.module';
+import { ProfileComponent } from 'src/app/modules/profile/profile.component';
 
 
 
@@ -25,7 +26,8 @@ import { MaterialModule } from 'src/app/shared/material.module';
     CategoryComponent,
     CartComponent,
     OrderComponent,
-    ReplacePipe
+    ReplacePipe,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
