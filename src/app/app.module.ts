@@ -20,7 +20,6 @@ import { AdminAuthorizationGuard } from './modules/admin/common/quard/adminAutho
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DefaultModule,
     FullpageModule,    
     FullpageadminModule,
     FullpageadminemptyModule,
