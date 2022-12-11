@@ -12,6 +12,7 @@ import { DefaultModule } from './layouts/default/default.module';
 import { FullpageadminemptyModule } from './layouts/fullpageadminempty/fullpageadminempty.module';
 import { jwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
 import { AdminAuthorizationGuard } from './modules/admin/common/quard/adminAuthorizationGuard';
+import { LostPasswordComponent } from './modules/login/lost-password/lost-password.component';
 
 @NgModule({
   declarations: [

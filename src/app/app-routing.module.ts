@@ -26,6 +26,7 @@ import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.com
 import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminempty.component';
 import { AdminAuthorizationGuard } from './modules/admin/common/quard/adminAuthorizationGuard';
 import { ProfileComponent } from './modules/profile/profile.component';
+import { LostPasswordComponent } from './modules/login/lost-password/lost-password.component';
 
 const routes: Routes = [
   {
@@ -41,7 +42,9 @@ const routes: Routes = [
   },
   {
     path:'', component: FullpageComponent, children: [
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      {path: 'lostPassword', component: LostPasswordComponent},
+      {path: 'lostPassword/:hash', component: LostPasswordComponent}
     ]
   },
   {
