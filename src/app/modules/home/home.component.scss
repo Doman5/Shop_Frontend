@@ -1,0 +1,47 @@
+@import'../../../variable.scss';
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-product {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.img-product {
+    margin-right: 10px;
+}
+
+.product-price {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: $warn;
+}
+
+mat-card {
+    margin-bottom: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #777;
+}
+
+.productSalePrice {
+    font-size: 30px;
+    font-weight:  500;
+    margin-top: 20px;
+    color: green;
+}
+
+.productPriceDisable {
+    color: lightgray;
+    text-decoration: line-through;
+    font-size: 22px;    
+}
