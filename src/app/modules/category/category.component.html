@@ -14,7 +14,8 @@
             </div>
         </div>
         <div class="product-price">
-            <div> {{product.price}} {{product.currency}}</div>  
+            <div [ngClass]="{'productPriceDisable': product.salePrice}"> {{product.price}} {{product.currency}}</div>  
+            <div class="productSalePrice" *ngIf="product.salePrice"> {{product.salePrice}} {{product.currency}}</div>
         </div>
     </div>
     <mat-card-actions align="end" fxLayoutGap="10">

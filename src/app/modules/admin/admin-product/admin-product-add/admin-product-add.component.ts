@@ -34,6 +34,7 @@ export class AdminProductAddComponent implements OnInit {
       fullDescription: ['', [Validators.required, Validators.minLength(4)]],
       categoryId: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
+      salePrice: ['', Validators.min(0)],
       currency: ['PLN', Validators.required],
       slug: ['',[Validators.required,Validators.minLength(4)]]
     });
