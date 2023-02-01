@@ -1,4 +1,4 @@
-# CarFrontend
+# Shop Frontend
 
 ### A simple frontend application for shop application.
 ### This app is part of course Kurs aplikacji webowych from nullPoinretException.pl 
